@@ -1,0 +1,16 @@
+#!/bin/sh
+
+
+launchctl disable system/com.apple.networking.discoveryd
+launchctl disable system/com.apple.discoveryd_helper
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.discoveryd.plist
+launchctl unload -w /System/Library/LaunchDaemons/com.apple.discoveryd_helper.plist
+
+# OS X 10.10 launchctl semantics from https://github.com/Homebrew/homebrew/issues/33259
+
+launchctl bootstrap system /System/Library/LaunchDaemons/com.apple.mDNSResponderHelper.plist
+launchctl bootstrap system /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+launchctl enable system/com.apple.mDNSResponderHelper
+launchctl enable system/com.apple.mDNSResponder
+launchctl kickstart -k system/com.apple.mDNSResponderHelper
+launchctl kickstart -k system/com.apple.mDNSResponder

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+launchctl unload /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
+launchctl unload /System/Library/LaunchDaemons/com.apple.mDNSResponderHelper.plist
+
+launchctl load /System/Library/LaunchDaemons/com.apple.discoveryd_helper.plist
+launchctl load /System/Library/LaunchDaemons/com.apple.discoveryd
