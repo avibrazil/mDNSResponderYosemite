@@ -1,4 +1,4 @@
-# OS X 10.9 mDNSResponder packaged to 10.10
+# mDNSResponder for OS X 10.10 Yosemite (forward ported from 10.9)
 
 10.10 discoveryd and DNS resolution is broken, according to [Ars Technica](http://arstechnica.com/apple/2015/01/12/why-dns-in-os-x-10-10-is-broken-and-what-you-can-do-to-fix-it/)
 
